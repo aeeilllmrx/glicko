@@ -75,6 +75,7 @@ def load_tournament_results(filename: str) -> Tuple[List[Dict], List[str]]:
                 k.strip(): v.strip() for k, v in row.items() if k and k.strip()
             }
             cleaned_row["ID"] = int(cleaned_row["ID"])
+            cleaned_row["Rating"] = int(cleaned_row["Rating"])
             results.append(cleaned_row)
     return results, round_columns
 
@@ -117,7 +118,7 @@ def process_round(
             p1_name, p1_rating = p1_data
 
             p2_id = opponent_number
-            p2_data = player_stats[opponent_number]
+            p2_data = player_stats.get(opponent_number)
             if p2_data is None:
                 print(f"Error: Player {opponent_number} not found in player stats.")
                 continue
@@ -131,9 +132,14 @@ def process_round(
             player_stats[p2_id] = (p2_name, p2_rating_updated)
 
 
-def save_player_stats(results: Dict, output_file: str):
+def save_player_stats(
+    initial_player_ratings: Dict[int, int],
+    results: Dict,
+    all_players_output_file: str,
+    changed_players_output_file: str,
+):
     try:
-        with open(output_file, "w", newline="") as file:
+        with open(all_players_output_file, "w", newline="") as file:
             writer = csv.writer(file, dialect="custom")
             writer.writerow(["ID", "name", "rating", "RD", "vol"])
             for _id, (name, rating) in results.items():
@@ -143,29 +149,64 @@ def save_player_stats(results: Dict, output_file: str):
                         name,
                         round(rating.mu),
                         round(rating.phi),
-                        round(rating.sigma, 6),
+                        round(rating.sigma, 8),
                     ]
                 )
-        print(f"Updated ratings have been written to {output_file}")
+        print(
+            f"The full set of new player ratings have been written to {all_players_output_file}"
+        )
+
+        with open(changed_players_output_file, "w", newline="") as file:
+            writer = csv.writer(file, dialect="custom")
+            writer.writerow(["ID", "name", "rating", "gain"])
+            for _id, rating in initial_player_ratings.items():
+                name, rating = results[_id]
+                writer.writerow(
+                    [
+                        _id,
+                        name,
+                        round(rating.mu),
+                        round(rating.mu) - initial_player_ratings[_id],
+                    ]
+                )
+        print(
+            f"Updated player ratings have been written to {changed_players_output_file}"
+        )
     except IOError as e:
         print(f"Error writing to output file: {e}")
 
 
-def process_tournament(players_file: str, games_file: str, output_file: str):
+def process_tournament(
+    players_file: str,
+    games_file: str,
+    all_players_output_file: str,
+    changed_players_output_file: str,
+):
     player_stats = load_player_stats(players_file)
     player_results, round_columns = load_tournament_results(games_file)
+    initial_player_ratings = {
+        player["ID"]: player["Rating"] for player in player_results
+    }
 
     for round_column in round_columns:
         process_round(player_results, player_stats, round_column)
 
-    save_player_stats(player_stats, output_file)
+    save_player_stats(
+        initial_player_ratings,
+        player_stats,
+        all_players_output_file,
+        changed_players_output_file,
+    )
 
 
 if __name__ == "__main__":
     glicko2 = Glicko2()
 
     players_file = "players.csv"
-    games_file = "games.csv"
-    output_file = "output.csv"
+    games_file = "tournament.csv"
+    all_players_output_file = "output.csv"
+    changed_players_output_file = "changed_players.csv"
 
-    process_tournament(players_file, games_file, output_file)
+    process_tournament(
+        players_file, games_file, all_players_output_file, changed_players_output_file
+    )
