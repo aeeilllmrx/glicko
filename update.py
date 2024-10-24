@@ -17,7 +17,7 @@ class CustomDialect(csv.Dialect):
 csv.register_dialect("custom", CustomDialect)
 
 
-def load_player_stats(filename: str) -> Dict[str, Tuple[str, Rating]]:
+def load_player_stats(filename: str) -> Dict[int, Tuple[str, Rating]]:
     """
     Returns a mapping from player id to (name, Rating) tuple.
     """
@@ -33,7 +33,7 @@ def load_player_stats(filename: str) -> Dict[str, Tuple[str, Rating]]:
 
             _id, name, rating, rd, vol = parts
 
-            player_stats[_id] = (
+            player_stats[int(_id)] = (
                 name,
                 Rating(
                     mu=int(rating),
@@ -44,20 +44,39 @@ def load_player_stats(filename: str) -> Dict[str, Tuple[str, Rating]]:
     return player_stats
 
 
-def load_tournament_results(filename: str) -> List[Dict]:
+def load_tournament_results(filename: str) -> Tuple[List[Dict], List[str]]:
     """
-    Return a dictionary with keys {Number, ID, Name, Rnd1, Rnd2, Rnd3, Rnd4, Rnd5}.
+    Returns:
+        - List of dictionaries with player data
+        - List of round column names in order
     """
+    round_columns = []
     results = []
     with open(filename, "r", newline="") as file:
         reader = csv.DictReader(file, dialect="custom")
+
+        for column in reader.fieldnames:
+            if column:
+                col = column.strip()
+                if (
+                    col.startswith("Rnd")
+                    or col.startswith("RD")
+                    or col.startswith("Round ")
+                ):
+                    round_columns.append(col)
+
+        # Do not include RD, as that is rating deviation
+        if "RD" in round_columns:
+            round_columns.remove("RD")
+        round_columns.sort(key=lambda x: int("".join(filter(str.isdigit, x))))
+
         for i, row in enumerate(reader):
             cleaned_row = {
                 k.strip(): v.strip() for k, v in row.items() if k and k.strip()
             }
-            cleaned_row["Number"] = i + 1
+            cleaned_row["ID"] = int(cleaned_row["ID"])
             results.append(cleaned_row)
-    return results
+    return results, round_columns
 
 
 def parse_round_result(result: str) -> Tuple[str, int]:
@@ -84,13 +103,11 @@ def update(p1: Rating, p2: Rating, result: str) -> Tuple[Rating, Rating]:
 def process_round(
     player_results: List[Dict],
     player_stats: Dict,
-    player_lookup: Dict,
-    round_number: int,
+    round_column: str,
 ):
     for player in player_results:
-        result = player[f"Rnd{round_number}"]
+        result = player[round_column]
         result_type, opponent_number = parse_round_result(result)
-
         if result_type != "X":  # Ignore byes and unplayed games
             p1_id = player["ID"]
             p1_data = player_stats.get(p1_id)
@@ -99,15 +116,10 @@ def process_round(
                 continue
             p1_name, p1_rating = p1_data
 
-            opponent = player_lookup.get(opponent_number)
-            if opponent is None:
-                print(f"Warning: Opponent {opponent_number} not found")
-                continue
-
-            p2_id = opponent["ID"]
-            p2_data = player_stats.get(p2_id)
+            p2_id = opponent_number
+            p2_data = player_stats[opponent_number]
             if p2_data is None:
-                print(f"Error: Player {p2_id} not found in player stats.")
+                print(f"Error: Player {opponent_number} not found in player stats.")
                 continue
             p2_name, p2_rating = p2_data
 
@@ -141,21 +153,19 @@ def save_player_stats(results: Dict, output_file: str):
 
 def process_tournament(players_file: str, games_file: str, output_file: str):
     player_stats = load_player_stats(players_file)
-    player_results = load_tournament_results(games_file)
-    player_lookup = {int(p["Number"]): p for p in player_results}
+    player_results, round_columns = load_tournament_results(games_file)
 
-    for round_number in range(1, 6):  # 5 rounds
-        process_round(player_results, player_stats, player_lookup, round_number)
+    for round_column in round_columns:
+        process_round(player_results, player_stats, round_column)
 
     save_player_stats(player_stats, output_file)
 
 
 if __name__ == "__main__":
-    import sys
-
     glicko2 = Glicko2()
 
-    if len(sys.argv) != 4:
-        print("Usage: python update.py players.csv games.csv output.csv")
-    else:
-        process_tournament(sys.argv[1], sys.argv[2], sys.argv[3])
+    players_file = "players.csv"
+    games_file = "games.csv"
+    output_file = "output.csv"
+
+    process_tournament(players_file, games_file, output_file)

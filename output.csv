@@ -1,6 +1,6 @@
 ID	name	rating	RD	vol
-1	Abbas, Sean	1114	129	0.059968
-2	Abdelhamid, Ahmed	1482	133	0.060032
+1	Abbas, Sean	1500	350	0.06
+2	Abdelhamid, Ahmed	1596	174	0.060005
 3	Acosta, Christian	1196	195	0.59587
 4	Agishev, Kirill	1771	89	0.060004
 5	Alexander, Sapphrodite	1387	176	0.059998
@@ -11,7 +11,7 @@ ID	name	rating	RD	vol
 10	Antoine, Ed	1500	350	0.06
 11	Aporta, Chris	1557	171	0.059995
 12	Araujo-Simon, Jake	1500	350	0.06
-13	Arboleda, Carlos	1583	123	0.059959
+13	Arboleda, Carlos	1500	350	0.06
 14	Armsworth, Kieth	1520	169	0.06
 15	Attner, Michael	1147	109	0.059993
 16	Auger, Michael NM	1500	350	0.06
@@ -22,10 +22,10 @@ ID	name	rating	RD	vol
 21	Bagga, Harmeet Singh	1718	202	0.059997
 22	Baik, Jen	1378	177	0.059997
 23	Bamford, Michael	1500	350	0.06
-24	Banerjee, Shreyo	1404	95	0.05998
+24	Banerjee, Shreyo	1516	127	0.06
 25	Banihashemi, Behtash	1363	100	0.059988
-26	Bar, Ben	1445	71	0.060005
-27	Barroso, Jimmy	1298	216	0.059998
+26	Bar, Ben	1408	74	0.05999
+27	Barroso, Jimmy	1696	77	0.059969
 28	Baskoylu, Mehmet	1500	350	0.06
 29	Bauder, Steve	1500	350	0.06
 30	Beardsley, Ben	1706	123	0.060002
@@ -35,7 +35,7 @@ ID	name	rating	RD	vol
 34	Bennett, Myles	1367	166	0.060002
 35	Bernard, Raphael	1543	182	0.060004
 36	Berry, Paul	1288	180	0.059997
-37	Biancuzzo, Matt	1819	93	0.059959
+37	Biancuzzo, Matt	1773	106	0.059989
 38	Bluffstone, Ari	1500	350	0.06
 39	Borimski, Arie	1500	350	0.06
 40	Boventer, Daniel	1458	169	0.059999
@@ -46,24 +46,24 @@ ID	name	rating	RD	vol
 45	Buckley, Sean	1500	350	0.06
 46	Buitrago, Nicolas	1244	177	0.059995
 47	Burke, Alex	1500	350	0.06
-48	Bustillo, Joaquin	1834	101	0.059951
+48	Bustillo, Joaquin	1799	128	0.060003
 49	Bogusta, Theo	1424	175	0.059999
 50	Cabasso,Glenn	1500	350	0.06
 51	Cadet, MJ	1500	350	0.06
 52	Caldwell, Gabe	1500	350	0.06
-53	Calixto, Jilverto	1139	101	0.059967
+53	Calixto, Jilverto	1225	136	0.060001
 54	Candelaria, Raynaldo	1607	167	0.060001
 55	Cao, Justin 	1500	350	0.06
 56	Carino, Cesar	1500	350	0.06
 57	Cartagena, David	1262	160	0.059995
-58	Cashore, Massey	1505	98	0.060034
+58	Cashore, Massey	1701	124	0.059995
 59	Centeno, Abraham	1738	158	0.059996
 60	Chair, Ben	1500	350	0.06
 61	Chess, Emile	1500	350	0.06
 62	Cheung, Nick	1500	350	0.06
 63	Chiang, Hartley	1941	185	0.06
 64	Chiappini, Peter	1636	182	0.598118
-65	Ching, Mike	1676	89	0.060013
+65	Ching, Mike	1642	118	0.060003
 66	Cho, Joseph	1500	350	0.06
 67	Chou, Yien	1366	174	0.06
 68	Claveria, Jordyn	1177	174	0.059996
@@ -86,7 +86,7 @@ ID	name	rating	RD	vol
 85	Dansky, Neal	1272	226	0.059998
 86	Daya, Sunil	1500	350	0.06
 87	De Coursey, Dana	1154	177	0.059998
-88	De Cuyper, Hendrik	1854	79	0.05996
+88	De Cuyper, Hendrik	1790	89	0.05998
 89	De Dios, Diego	1500	350	0.06
 90	De Guzman, Zach	1387	177	0.059997
 91	Dellapolla, Bjorn Valentino	1500	350	0.06
@@ -94,7 +94,7 @@ ID	name	rating	RD	vol
 93	Diaz, Kevin	940	201	0.06
 94	Dinowitz, Emma	1530	184	0.060002
 95	Dirkx, Ivan	1500	350	0.06
-96	Dittmeier, Christian	1471	77	0.059999
+96	Dittmeier, Christian	1422	86	0.060013
 97	Dorda, Ale	1520	129	0.059994
 98	Downey, Nick	1500	350	0.06
 99	Dugan, Michael	1500	350	0.06
@@ -103,7 +103,7 @@ ID	name	rating	RD	vol
 102	Edgard,Willy 	1840	151	0.059997
 103	Edmonds, Zedekiyah	1239	195	0.06
 104	Elgabrowny, Abdullah	1500	350	0.06
-105	Ei, Haythi	1464	124	0.059985
+105	Ei, Haythi	1500	350	0.06
 106	Eiche, Jim	1251	178	0.059997
 107	Emmanuel, Robert	1451	306	0.059999
 108	Evans, Holten	1500	350	0.06
@@ -126,7 +126,7 @@ ID	name	rating	RD	vol
 125	Garcia, Elian	1500	350	0.06
 126	Garcia, Miguel	1987	118	0.05999
 127	Garrett, Benjamin	1500	350	0.06
-128	Ghabra, Sammi	1189	108	0.059945
+128	Ghabra, Sammi	1320	164	0.059997
 129	Glass, Daniel	1500	350	0.06
 130	Glinsky, Luka	1919	77	0.060006
 131	Gulick, Clay	1500	350	0.06
@@ -151,17 +151,17 @@ ID	name	rating	RD	vol
 150	Hinson, Miles	1910	174	0.059998
 151	Ho, Jeffery	1250	137	0.059998
 152	Holbrook, Hunter	1500	350	0.06
-153	Hull, Cameron	1798	93	0.060034
+153	Hull, Cameron	1909	107	0.059992
 154	lyer, Karan	1500	350	0.06
 155	Jaeger, Antonella	1500	350	0.06
 156	Jaehn, Harrison	1500	350	0.06
-157	Jameson, Micah	1617	73	0.060039
+157	Jameson, Micah	1542	75	0.059986
 158	Jarvis, Keyron	1500	350	0.06
 159	Jaweed, Azar 	1500	350	0.06
 160	Jenness, Chris	1500	350	0.06
 161	Jimenez, Nolan	1449	166	0.059995
 162	Johnson, Nico	1673	132	0.060011
-163	Jones, Walker	1465	128	0.059992
+163	Jones, Walker	1500	350	0.06
 164	Julian, Tyler	1500	350	0.06
 165	Kagle, Sasha	1500	350	0.06
 166	Kahan, Simon	1500	350	0.06
@@ -172,7 +172,7 @@ ID	name	rating	RD	vol
 171	Kemp, Kai	997	242	0.060003
 172	Kennedy, Ebony	1244	126	0.059996
 173	Kennedy, John	1500	350	0.06
-174	Kenny-Maheux, Victor	1614	112	0.059946
+174	Kenny-Maheux, Victor	1656	170	0.059997
 175	Kharwadkar, Sagar	1714	112	0.059998
 176	Klein, Kinneret	1225	161	0.059997
 177	Klinkner, Konrad	1608	181	0.06
@@ -181,13 +181,13 @@ ID	name	rating	RD	vol
 180	Kogan, David	1309	254	0.059999
 181	Kohn, Jordan 	1500	350	0.06
 182	Korley,  Kassa IM	2471	77	0.060006
-183	Koufakis, Michael	1349	127	0.059958
+183	Koufakis, Michael	1500	350	0.06
 184	Kozikowski, Anthony	1500	350	0.06
 185	Kozikowski, Nathan	1500	350	0.06
 186	Krasnov, Andrey FM	1906	131	0.059997
 187	Krawczyk, Nir	1500	350	0.06
 188	Kristiansen, Alex	1500	350	0.06
-189	Kumar, Adi	1596	122	0.059995
+189	Kumar, Adi	1886	108	0.060002
 190	Kural, Zeki	1500	350	0.06
 191	Lanin, Misha	1269	143	0.060002
 192	Larson, Kirk	1177	169	0.059998
@@ -195,7 +195,7 @@ ID	name	rating	RD	vol
 194	Laurent, Augustin	1618	164	0.059997
 195	Lawson Jason	1702	170	0.059996
 196	Leibowitz, Gabriel 	1500	350	0.06
-197	Leinwand, Joseph	1049	86	0.059943
+197	Leinwand, Joseph	1077	98	0.059984
 198	Leonard, Bert	1500	350	0.06
 199	Leu, Raymond	1777	141	0.060006
 200	Levin, Anthony	1966	77	0.060006
@@ -209,7 +209,7 @@ ID	name	rating	RD	vol
 208	Lipkin, Max	1282	166	0.060002
 209	Liriano, Omar	1500	350	0.06
 210	Liu, Danny	1339	175	0.060004
-211	Liu, Glo	1346	72	0.05995
+211	Liu, Glo	1342	75	0.059988
 212	Liu, Leonardo NM	2071	131	0.059997
 213	Lopez, Angel	1663	172	0.059996
 214	Lucero, Mara	1500	350	0.06
@@ -225,7 +225,7 @@ ID	name	rating	RD	vol
 224	Marsh, Andrew	1500	350	0.06
 225	Marsh, Oliver	1500	350	0.06
 226	Martin, Kenneth	1500	350	0.06
-227	Martinez, Nico	1261	130	0.059961
+227	Martinez, Nico	1500	350	0.06
 228	Martinez, Shawn	2021	166	0.059998
 229	Matthew, Jephson	1897	166	0.06
 230	Matyassy, Andras	1423	227	0.059998
@@ -233,7 +233,7 @@ ID	name	rating	RD	vol
 232	Mayo, Morgan	1500	350	0.06
 233	Mcdonough, Conor	1500	350	0.06
 234	McGrath, Ian	1500	350	0.06
-235	McLean, Wyatt	1571	74	0.059979
+235	McLean, Wyatt	1631	78	0.059988
 236	Medley, Maxwell	1500	350	0.06
 237	Meduri, Aakaash NM	1784	177	0.060001
 238	Meduri, Vishaal	1500	350	0.06
@@ -254,15 +254,15 @@ ID	name	rating	RD	vol
 253	Najera, Manuel	1564	166	0.060002
 254	Namavari, Armin	1122	173	0.060001
 255	Narula, Gautam	1827	130	0.059997
-256	Navarro, Diego	1484	74	0.060043
+256	Navarro, Diego	1378	78	0.06
 257	Nepa-Rewak, Max	1445	117	0.060008
-258	Nessipbekov, Celeste	1414	106	0.059983
-259	Nkululekl, Nkosi	1793	116	0.059964
+258	Nessipbekov, Celeste	1584	167	0.060004
+259	Nkululekl, Nkosi	1500	350	0.06
 260	Nitis, Druss	1454	178	0.059999
 261	Nochomovitz, Yigal	1623	175	0.059996
 262	Nolan, Patrick	1500	350	0.06
 263	Noonan, Robert	1628	175	0.059995
-264	Nugent, Jack	1912	107	0.059978
+264	Nugent, Jack	1817	94	0.060031
 265	O'bumsawin, Nick	1500	350	0.06
 266	Ochoa, Paul	916	176	0.06
 267	Ogilvie, Anna	1500	350	0.06
@@ -274,10 +274,10 @@ ID	name	rating	RD	vol
 273	Ovando, James	1500	350	0.06
 274	Oyama, Saye	1745	133	0.059991
 275	Ozkan, Ali	1521	171	0.060003
-276	Palmer, Michelle	928	102	0.059961
+276	Palmer, Michelle	1093	133	0.059996
 277	Papandrea, John	1500	350	0.06
 278	Pandey, Utkal	1500	350	0.06
-279	Paredes, Alexis NM	2153	140	0.059974
+279	Paredes, Alexis NM	2077	168	0.059995
 280	Park, Drew	1500	350	0.06
 281	Park, Tony	1020	168	0.059998
 282	Parris, Michael	1500	350	0.06
@@ -309,14 +309,14 @@ ID	name	rating	RD	vol
 308	Rogers, Spencer	1500	350	0.06
 309	Rosa, Edgar	1203	121	0.060006
 310	Rosado, Charlie	1759	176	0.060001
-311	Rosenfeld, Adam	1469	92	0.060059
+311	Rosenfeld, Adam	1277	108	0.059998
 312	Rosmarin, Jared	1500	350	0.06
 313	Ross, Gabriel	1425	168	0.059996
 314	Ruf, Joshua	1500	350	0.06
 315	Ruffner, Matt	1500	350	0.06
 316	Ruiz, Fransisco	1271	230	0.596816
-317	Rutta, Maya	1515	72	0.059987
-318	Salinas, Michael	1497	97	0.059992
+317	Rutta, Maya	1581	74	0.059992
+318	Salinas, Michael	1457	135	0.060003
 319	Salazar, Erik	1673	174	0.059999
 320	Samuel, Timothy	1500	350	0.06
 321	Samuels, Jacob	1274	128	0.060005
@@ -324,7 +324,7 @@ ID	name	rating	RD	vol
 323	Santana, Talitha	1500	350	0.06
 324	Santiago, Naomi	1500	350	0.06
 325	Schraff, Alex	1468	180	0.059996
-326	Schmidt, Simon	2315	218	0.564566
+326	Schmidt, Simon	1936	215	0.601694
 327	Schneider, Avi	1500	350	0.06
 328	Schwartz, Jacob	1205	129	0.059995
 329	Schweid, Benji	1500	350	0.06
@@ -336,7 +336,7 @@ ID	name	rating	RD	vol
 335	Sercombe, Willy	1500	350	0.06
 336	Seward, Sunny	1208	224	0.059999
 337	Shafer, Travis	1500	350	0.06
-338	Sharf, Sam	1695	83	0.059931
+338	Sharf, Sam	1639	94	0.059988
 339	Sharuda, Kameliia	1529	190	0.059997
 340	Shen, Spencer	1482	179	0.06
 341	Siegel, Evan	1500	350	0.06
@@ -378,7 +378,7 @@ ID	name	rating	RD	vol
 377	Van Huben, CJ	1383	107	0.059998
 378	Van Leeuwen, Lily	1499	175	0.059998
 379	Vander Weele, Eric	1400	169	0.059998
-380	Vas, Seyon	1735	77	0.059994
+380	Vas, Seyon	1759	84	0.059992
 381	Viceconte, Ryan	1500	350	0.06
 382	Vilchis, Uciel	1465	126	0.060004
 383	Velasquez, Alex	1705	184	0.059997
@@ -386,11 +386,11 @@ ID	name	rating	RD	vol
 385	Vouniseas, Theo	1500	350	0.06
 386	Vulis, Danny NM	1899	122	0.059998
 387	Wallace, Tripp	1188	176	0.059997
-388	Walthrust, Najee-Ana	1895	76	0.059959
+388	Walthrust, Najee-Ana	1887	80	0.059979
 389	Walthrust, Nathaniel	1502	180	0.059999
 390	Wang, Anthony	1500	350	0.06
 391	Wang, Daniel	1525	79	0.059996
-392	Washimkar, Atharva	1680	73	0.059973
+392	Washimkar, Atharva	1896	67	0.059994
 393	Watson, Benjamin	1412	170	0.059994
 394	Waugh, Mali	1500	350	0.06
 395	Wei, Arthur	1500	350	0.06

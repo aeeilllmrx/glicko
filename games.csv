@@ -1,38 +1,5 @@
-ID	Name	Team	Gr	Rate	Pts	Rnd1	Rnd2	Rnd3	Rnd4	Rnd5
-326	Schmidt, Simon	-		1936	5	W24	W18	W10	W6	W5
-279	Paredes, Alexis NM	-		2023	4	-H-	-H-	W17	W20	W10
-388	Walthrust, Najee-Ana	-		1887	4	W26	W22	L5	W27	W11
-88	De Cuyper, Hendrik	-		1790	4	W25	W23	W19	L5	W12
-264	Nugent, Jack	-		1672	4	W15	W16	W3	W4	L1
-48	Bustillo, Joaquin	-		1799	3.5	W33	W31	W12	L1	D8
-65	Ching, Mike	-		1642	3.5	L16	W15	D9	W29	W20
-338	Sharf, Sam	-		1639	3.5	W28	L19	W13	W17	D6
-259	Nkululekl, Nkosi	-		1500	3.5	W20	L10	D7	W22	W18
-37	Biancuzzo, Matt	-		1773	3	W29	W9	L1	W16	L2
-380	Vas, Seyon	-		1759	3	W13	L12	W25	W26	L3
-157	Jameson, Micah	-	-	1542	3	W36	W11	L6	W19	L4
-13	Arboleda, Carlos	-		1500	3	L11	W35	L8	W23	W27
-318	Salinas, Michael	-		1457	3	L21	L30	W36	W31	W28
-96	Dittmeier, Christian	-		1422	3	L5	L7	W37	W24	W26
-256	Navarro, Diego	-		1378	3	W7	L5	W23	L10	W25
-311	Rosenfeld, Adam	-		1277	3	W30	W21	L2	L8	W29
-174	Kenny-Maheux, Victor	-		1656	2.5	W27	L1	D29	W28	L9
-153	Hull, Cameron	-		1909	2	W32	W8	L4	L12	-U-
-392	Washimkar, Atharva	-		1719	2	L9	W33	W31	L2	L7
-58	Cashore, Massey	-		1701	2	W14	L17	L26	L25	W32
-235	McLean, Wyatt	-		1631	2	W34	L3	L27	L9	W33
-258	Nessipbekov, Celeste			1584	2	W35	L4	L16	L13	W34
-24	Banerjee, Shreyo	-		1516	2	L1	L27	W34	L15	W35
-105	Ei, Haythi			1500	2	L4	W34	L11	W21	L16
-163	Jones, Walker	-		1500	2	L3	W36	W21	L11	L15
-26	Bar, Ben	-		1408	2	L18	W24	W22	L3	L13
-211	Liu, Glo	-		1342	2	L8	W32	W33	L18	L14
-183	Koufakis, Michael	-		1500	1.5	L10	W37	D18	L7	L17
-2	Abdelhamid, Ahmed	-		1596	1	L17	W14	-U-	-U-	-U-
-317	Rutta, Maya	-		1581	1	W37	L6	L20	L14	-U-
-1	Abbas, Sean			1500	1	L19	L28	L35	W37	L21
-227	Martinez, Nico	-		1500	1	L6	L20	L28	W35	L22
-128	Ghabra, Sammi	-		1320	1	L22	L25	L24	W36	L23
-53	Calixto, Jilverto	-		1225	1	L23	L13	W32	L33	L24
-197	Leinwand, Joseph	-		1077	1	L12	L26	L14	L34	W37
-276	Palmer, Michelle	-		1093	0	L31	L29	L15	L32	L36
+ID	Name	Rating	RD	RV	Points	Rnd1	Rnd2	Rnd3	Rnd4	Rnd5	Rnd6
+27	Barroso, Jimmy	1787	92	0.05998892	1	L392	L392	L189	L189	W264	L264
+264	Nugent, Jack	1815	144	0.05999306	3	L189	W189	L392	W392	L27	W27
+392	Washimkar, Atharva	1867	71	0.06000075	4	W27	W27	W264	L264	L189	W189
+189	Kumar, Adi	1500	350	0.06	4	W264	L264	W27	W27	W392	L392
