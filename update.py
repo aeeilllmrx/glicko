@@ -76,12 +76,13 @@ def load_tournament_results(filename: str) -> Tuple[List[Dict], List[str]]:
             }
             cleaned_row["ID"] = int(cleaned_row["ID"])
             cleaned_row["Rating"] = int(cleaned_row["Rating"])
+            cleaned_row["Number"] = i + 1
             results.append(cleaned_row)
     return results, round_columns
 
 
 def parse_round_result(result: str) -> Tuple[str, int]:
-    if result == "-H-" or result == "-U-":
+    if result == "-H-" or result == "-U-" or result == "-B-":
         return ("X", -1)
     result_type = result[0]
     opponent_number = int(result[1:])
@@ -104,10 +105,17 @@ def update(p1: Rating, p2: Rating, result: str) -> Tuple[Rating, Rating]:
 def process_round(
     player_results: List[Dict],
     player_stats: Dict,
+    player_lookup: Dict,
+    player_round_diffs: Dict,
     round_column: str,
 ):
+    seen_players = set()
     for player in player_results:
         result = player[round_column]
+        p1_id = player["ID"]
+        if p1_id in seen_players:
+            continue
+        seen_players.add(p1_id)
         result_type, opponent_number = parse_round_result(result)
         if result_type != "X":  # Ignore byes and unplayed games
             p1_id = player["ID"]
@@ -117,8 +125,9 @@ def process_round(
                 continue
             p1_name, p1_rating = p1_data
 
-            p2_id = opponent_number
-            p2_data = player_stats.get(opponent_number)
+            p2_id = player_lookup[opponent_number]
+            seen_players.add(p2_id)
+            p2_data = player_stats.get(p2_id)
             if p2_data is None:
                 print(f"Error: Player {opponent_number} not found in player stats.")
                 continue
@@ -127,6 +136,10 @@ def process_round(
             p1_rating_updated, p2_rating_updated = update(
                 p1_rating, p2_rating, result_type
             )
+            p1_round_diff = p1_rating_updated.mu - p1_rating.mu
+            p2_round_diff = p2_rating_updated.mu - p2_rating.mu
+            player_round_diffs[p1_id][round_column] = p1_round_diff
+            player_round_diffs[p2_id][round_column] = p2_round_diff
 
             player_stats[p1_id] = (p1_name, p1_rating_updated)
             player_stats[p2_id] = (p2_name, p2_rating_updated)
@@ -135,6 +148,7 @@ def process_round(
 def save_player_stats(
     initial_player_ratings: Dict[int, int],
     results: Dict,
+    player_round_diffs: Dict,
     all_players_output_file: str,
     changed_players_output_file: str,
 ):
@@ -158,17 +172,29 @@ def save_player_stats(
 
         with open(changed_players_output_file, "w", newline="") as file:
             writer = csv.writer(file, dialect="custom")
-            writer.writerow(["ID", "name", "rating", "gain"])
+
+            # Header row consists of fixed fields and incremental gain fields
+            columns = ["ID", "name", "rating", "RD", "vol"]
+            columns += list(player_round_diffs[next(iter(player_round_diffs))].keys())
+            columns.append("overall gain")
+            writer.writerow(columns)
+
             for _id, rating in initial_player_ratings.items():
+                player_diff = player_round_diffs[_id]
+                row = []
                 name, rating = results[_id]
-                writer.writerow(
-                    [
-                        _id,
-                        name,
-                        round(rating.mu),
-                        round(rating.mu) - initial_player_ratings[_id],
-                    ]
-                )
+
+                row.append(_id)
+                row.append(name)
+                row.append(round(rating.mu))
+                row.append(round(rating.phi))
+                row.append(round(rating.sigma, 8))
+
+                for _, value in player_diff.items():
+                    row.append(round(value))
+
+                row.append(round(rating.mu) - initial_player_ratings[_id])
+                writer.writerow(row)
         print(
             f"Updated player ratings have been written to {changed_players_output_file}"
         )
@@ -184,23 +210,35 @@ def process_tournament(
 ):
     player_stats = load_player_stats(players_file)
     player_results, round_columns = load_tournament_results(games_file)
+    player_lookup = {player["Number"]: player["ID"] for player in player_results}
     initial_player_ratings = {
         player["ID"]: player["Rating"] for player in player_results
     }
+    player_round_diffs = {
+        player["ID"]: {rc: 0 for rc in round_columns} for player in player_results
+    }
 
     for round_column in round_columns:
-        process_round(player_results, player_stats, round_column)
+        print("Processing round:", round_column)
+        process_round(
+            player_results,
+            player_stats,
+            player_lookup,
+            player_round_diffs,
+            round_column,
+        )
 
     save_player_stats(
         initial_player_ratings,
         player_stats,
+        player_round_diffs,
         all_players_output_file,
         changed_players_output_file,
     )
 
 
 if __name__ == "__main__":
-    glicko2 = Glicko2()
+    glicko2 = Glicko2(tau=0.5)
 
     players_file = "players.csv"
     games_file = "tournament.csv"
