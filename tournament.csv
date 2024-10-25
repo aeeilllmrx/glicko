@@ -1,27 +1,27 @@
-ID	Name	Rating	RD	RV	Pts	Rnd1	Rnd2	Rnd3	Rnd4	Rnd5	Rnd6	Rnd7
-271	Paredes, Alexis NM	2118	82	0.05997954	6	W11	W8	W6	W2	L3	W4	W10
-128	Glinsky, Luka	2001	75	0.05999865	6	W12	W9	W4	L1	W10	W3	W5
-381	Washimkar, Atharva	1827	74	0.0600069	5.5	D10	W13	W5	W6	W1	L2	W8
-329	Sharf, Sam	1642	90	0.06000112	4.5	W26	W16	L2	D11	W19	L1	W12
-28	Beardsley, Ben	1638	82	0.06001143	4.5	W24	W17	L3	D12	W11	W7	L2
-3	Agishev, Kirill	1783	73	0.06000033	4	W20	W23	L1	L3	W12	L10	W11
-377	Walthrust, Najee-Ana	1762	92	0.06000385	4	-H-	D10	L11	W17	W15	L5	W16
-62	Chiappini, Peter	1601	75	0.05999069	4	W21	L1	L23	W18	W16	W19	L3
-229	McLean, Wyatt	1539	70	0.05999529	4	W18	L2	L10	L15	W17	W14	W19
-256	Nugent, Jack	1500	350	0.06	4	D3	D7	W9	W23	L2	W6	L1
-399	Baskoylu, Mehmet	1500	350	0.06	3.5	L1	W25	W7	D4	L5	W13	L6
-121	Ghabra, Sammi	1500	350	0.06	3.5	L2	W18	W15	D5	L6	W21	L4
-23	Banerjee, Shreyo	1445	69	0.05990292	3.5	-H-	L3	W21	L22	W20	L11	W18
-205	Liu, Glo	1418	81	0.05997812	3.5	-H-	-H-	-H-	-U-	-B-	L9	W21
-153	Jameson, Micah	1554	71	0.05997294	3	L17	W22	L12	W9	L7	L18	W23
-94	Dittmeier, Christian	1538	73	0.0599828	3	W25	L4	W17	L19	L8	W23	L7
-221	Martinez, Nico	1400	104	0.06002228	3	W15	L5	L16	L7	L9	W20	W24
-214	Maloney, Dennis	1354	100	0.05999656	3	L9	L12	W25	L8	W24	W15	L13
-191	Leinwand, Joseph	1184	100	0.05999092	3	L23	W24	W20	W16	L4	L8	L9
-400	Mosiolek, Damian	1500	350	0.06	2.5	L6	D21	L19	W24	L13	L17	-B-
-25	Bar, Ben	1422	71	0.05999693	2.5	L8	D20	L13	W25	W23	L12	L14
-382	Watson, Benjamin	1289	115	0.06000132	2.5	-H-	L15	W24	W13	-U-	-U-	-U-
-380	Wang, Daniel	1500	83	0.06001866	2	W19	L6	W8	L10	L21	L16	L15
-186	Larson, Kirk	1500	350	0.06	1	L5	L19	L22	L20	L18	-B-	L17
-249	Navarro, Diego	1238	78	0.05999943	1	L16	L11	L18	L21	-B-	-U-	-U-
-401	Holbrook, Hunter	1500	350	0.06	0	L4	-U-	-U-	-U-	-U-	-U-	-U-
+ID  	Name                 	Rating 	RD  	RV         	Pts 	Rnd1 	Rnd2 	Rnd3 	Rnd4 	Rnd5 	Rnd6 	Rnd7
+271 	Paredes, Alexis NM   	  2118 	 82 	0.05997954 	6   	W11  	W8   	W6   	W2   	L3   	W4   	W10
+128 	Glinsky, Luka        	  2001 	 75 	0.05999865 	6   	W12  	W9   	W4   	L1   	W10  	W3   	W5
+381 	Washimkar, Atharva   	  1827 	 74 	0.0600069  	5.5 	D10  	W13  	W5   	W6   	W1   	L2   	W8
+329 	Sharf, Sam           	  1642 	 90 	0.06000112 	4.5 	W26  	W16  	L2   	D11  	W19  	L1   	W12
+ 28 	Beardsley, Ben       	  1638 	 82 	0.06001143 	4.5 	W24  	W17  	L3   	D12  	W11  	W7   	L2
+  3 	Agishev, Kirill      	  1783 	 73 	0.06000033 	4   	W20  	W23  	L1   	L3   	W12  	L10  	W11
+377 	Walthrust, Najee-Ana 	  1762 	 92 	0.06000385 	4   	-H-  	D10  	L11  	W17  	W15  	L5   	W16
+ 62 	Chiappini, Peter     	  1601 	 75 	0.05999069 	4   	W21  	L1   	L23  	W18  	W16  	W19  	L3
+229 	McLean, Wyatt        	  1539 	 70 	0.05999529 	4   	W18  	L2   	L10  	L15  	W17  	W14  	W19
+256 	Nugent, Jack         	  1500 	350 	0.06       	4   	D3   	D7   	W9   	W23  	L2   	W6   	L1
+399 	Baskoylu, Mehmet     	  1500 	350 	0.06       	3.5 	L1   	W25  	W7   	D4   	L5   	W13  	L6
+121 	Ghabra, Sammi        	  1500 	350 	0.06       	3.5 	L2   	W18  	W15  	D5   	L6   	W21  	L4
+ 23 	Banerjee, Shreyo     	  1445 	 69 	0.05990292 	3.5 	-H-  	L3   	W21  	L22  	W20  	L11  	W18
+205 	Liu, Glo             	  1418 	 81 	0.05997812 	3.5 	-H-  	-H-  	-H-  	-U-  	-B-  	L9   	W21
+153 	Jameson, Micah       	  1554 	 71 	0.05997294 	3   	L17  	W22  	L12  	W9   	L7   	L18  	W23
+ 94 	Dittmeier, Christian 	  1538 	 73 	0.0599828  	3   	W25  	L4   	W17  	L19  	L8   	W23  	L7
+221 	Martinez, Nico       	  1400 	104 	0.06002228 	3   	W15  	L5   	L16  	L7   	L9   	W20  	W24
+214 	Maloney, Dennis      	  1354 	100 	0.05999656 	3   	L9   	L12  	W25  	L8   	W24  	W15  	L13
+191 	Leinwand, Joseph     	  1184 	100 	0.05999092 	3   	L23  	W24  	W20  	W16  	L4   	L8   	L9
+400 	Mosiolek, Damian     	  1500 	350 	0.06       	2.5 	L6   	D21  	L19  	W24  	L13  	L17  	-B-
+ 25 	Bar, Ben             	  1422 	 71 	0.05999693 	2.5 	L8   	D20  	L13  	W25  	W23  	L12  	L14
+382 	Watson, Benjamin     	  1289 	115 	0.06000132 	2.5 	-H-  	L15  	W24  	W13  	-U-  	-U-  	-U-
+380 	Wang, Daniel         	  1500 	 83 	0.06001866 	2   	W19  	L6   	W8   	L10  	L21  	L16  	L15
+186 	Larson, Kirk         	  1500 	350 	0.06       	1   	L5   	L19  	L22  	L20  	L18  	-B-  	L17
+249 	Navarro, Diego       	  1238 	 78 	0.05999943 	1   	L16  	L11  	L18  	L21  	-B-  	-U-  	-U-
+401 	Holbrook, Hunter     	  1500 	350 	0.06       	0   	L4   	-U-  	-U-  	-U-  	-U-  	-U-  	-U-
