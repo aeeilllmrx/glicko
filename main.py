@@ -27,6 +27,7 @@ def load_player_stats(filename: str) -> Dict[int, Tuple[str, Rating]]:
         for line in file:
             try:
                 parts = line.strip().split("\t")
+                parts = list(map(str.strip, parts))
                 _id, name, rating, rd, vol = parts
                 player_stats[_id] = (
                     name,
