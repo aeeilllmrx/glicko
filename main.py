@@ -25,22 +25,25 @@ def load_player_stats(filename: str) -> Dict[int, Tuple[str, Rating]]:
     with open(filename, "r", newline="") as file:
         next(file)
         for line in file:
-            parts = line.strip().split("\t")
-            if len(parts) != 5:
-                print(f"Skipping malformed line: {line}")
-                print(len(parts))
-                continue
-
-            _id, name, rating, rd, vol = parts
-
-            player_stats[int(_id)] = (
-                name,
-                Rating(
-                    mu=int(rating),
-                    phi=int(rd),
-                    sigma=float(vol),
-                ),
-            )
+            try:
+                parts = line.strip().split("\t")
+                _id, name, rating, rd, vol = parts
+                player_stats[_id] = (
+                    name,
+                    Rating(
+                        mu=int(rating),
+                        phi=int(rd),
+                        sigma=float(vol),
+                    ),
+                )
+            except ValueError:
+                raise ValueError(
+                    f"Player data input not correct. Please check that {filename}: \
+                        \n- has no blank lines \
+                        \n- is tab delimited \
+                        \n- has columns named ID  Name    Rating  RD  RV \
+                        \nIncorrect Line was: {line}"
+                ) from None
     return player_stats
 
 
@@ -54,6 +57,9 @@ def load_tournament_results(filename: str) -> Tuple[List[Dict], List[str]]:
     results = []
     with open(filename, "r", newline="") as file:
         reader = csv.DictReader(file, dialect="custom")
+
+        if not reader.fieldnames:
+            raise ValueError(f"CSV file '{filename}' has no header row")
 
         for column in reader.fieldnames:
             if column:
@@ -71,13 +77,22 @@ def load_tournament_results(filename: str) -> Tuple[List[Dict], List[str]]:
         round_columns.sort(key=lambda x: int("".join(filter(str.isdigit, x))))
 
         for i, row in enumerate(reader):
-            cleaned_row = {
-                k.strip(): v.strip() for k, v in row.items() if k and k.strip()
-            }
-            cleaned_row["ID"] = int(cleaned_row["ID"])
-            cleaned_row["Rating"] = int(cleaned_row["Rating"])
-            cleaned_row["Number"] = i + 1
-            results.append(cleaned_row)
+            try:
+                cleaned_row = {
+                    k.strip(): v.strip() for k, v in row.items() if k and k.strip()
+                }
+                cleaned_row["Rating"] = int(cleaned_row["Rating"])
+                cleaned_row["Number"] = i + 1
+                results.append(cleaned_row)
+            except ValueError:
+                raise ValueError(
+                    f"Tournament data input not correct. Please check that {filename}: \
+                        \n- has no blank lines \
+                        \n- is tab delimited \
+                        \n- has columns named ID  Name    Rnd1  Rnd 2  etc \
+                        \nIncorrect Line was: {row}"
+                ) from None
+
     return results, round_columns
 
 
@@ -121,16 +136,14 @@ def process_round(
             p1_id = player["ID"]
             p1_data = player_stats.get(p1_id)
             if p1_data is None:
-                print(f"Error: Player {p1_id} not found in player stats.")
-                continue
+                raise Exception(f"Error: Player {p1_id} not found in player stats.")
             p1_name, p1_rating = p1_data
 
             p2_id = player_lookup[opponent_number]
             seen_players.add(p2_id)
             p2_data = player_stats.get(p2_id)
             if p2_data is None:
-                print(f"Error: Player {opponent_number} not found in player stats.")
-                continue
+                raise Exception(f"Error: Player {p2_id} not found in player stats.")
             p2_name, p2_rating = p2_data
 
             p1_rating_updated, p2_rating_updated = update(
@@ -155,7 +168,7 @@ def save_player_stats(
     try:
         with open(all_players_output_file, "w", newline="") as file:
             writer = csv.writer(file, dialect="custom")
-            writer.writerow(["ID", "name", "rating", "RD", "vol"])
+            writer.writerow(["ID", "Name", "Rating", "RD", "RV"])
             for _id, (name, rating) in results.items():
                 writer.writerow(
                     [
@@ -174,7 +187,7 @@ def save_player_stats(
             writer = csv.writer(file, dialect="custom")
 
             # Header row consists of fixed fields and incremental gain fields
-            columns = ["ID", "name", "rating", "RD", "vol"]
+            columns = ["ID", "Name", "Rating", "RD", "RV"]
             columns += list(player_round_diffs[next(iter(player_round_diffs))].keys())
             columns.append("overall gain")
             writer.writerow(columns)
